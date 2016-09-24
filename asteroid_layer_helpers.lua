@@ -85,8 +85,6 @@ local np_satmos = {
 	persist = 0.6
 }
 
--- Stuff
-
 
 -- On dignode function. Atmosphere flows into a dug hole.
 minetest.register_on_dignode(function(pos, oldnode, digger)
