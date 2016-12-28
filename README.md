@@ -21,7 +21,8 @@ See the comments in this file for how to adjust:
 
 1. The minimum and maximum height of each layer.
 2. Whether map-generation is currently active for individual layers.
-3. Whether crafting recipes are enabled. 
+3. Whether player gravity changes for each layer (off by default).
+4. Whether crafting recipes are enabled. 
 
 Note: It is advised to turn off map-generation after you have generated the required number of asteroids.
 

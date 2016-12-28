@@ -50,21 +50,33 @@ minetest.register_globalstep(function(dtime)
 		if pos.y < space_low and current ~= "earth" then
 			player:set_sky({}, "regular", {})
 			player_list[name] = "earth"
+			if otherworlds.settings.gravity.enable then
+				player:set_physics_override({gravity = 1})
+			end
 
 		-- Outerspace
 		elseif pos.y > space_low and pos.y < space_high and current ~= "space" then
 			player:set_sky({}, "skybox", spaceskybox)
 			player_list[name] = "space"
+			if otherworlds.settings.gravity.enable then
+				player:set_physics_override({gravity = 0.4})
+			end
 
 		-- Redsky
 		elseif pos.y > redsky_low and pos.y < redsky_high and current ~= "redsky" then
 			player:set_sky({}, "skybox", redskybox)
-			player_list[name] = "redsky"		
+			player_list[name] = "redsky"
+			if otherworlds.settings.gravity.enable then
+				player:set_physics_override({gravity = 0.2})
+			end
 
 		-- Everything else (blackness)
 		elseif pos.y > redsky_high and current ~= "blackness" then
 			player:set_sky(000000, "plain", {})
 			player_list[name] = "blackness"
+			if otherworlds.settings.gravity.enable then
+				player:set_physics_override({gravity = 0.1})
+			end
 		end
 	end
 end)
@@ -72,4 +84,7 @@ end)
 minetest.register_on_leaveplayer(function(player)
 	local name = player:get_player_name()
 	player_list[name] = nil
+	if otherworlds.settings.gravity.enable then
+		player:set_physics_override({gravity = 1})
+	end
 end)

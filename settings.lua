@@ -19,3 +19,8 @@ otherworlds.settings.redsky_asteroids = {
 	YMIN = 6000, -- adjust to change minimum height of redsky layer
 	YMAX = 7000, -- adjust to change maximum height for redsky layer
 }
+
+-- gravity
+otherworlds.settings.gravity = {
+	enable = false, -- set to true to enable gravity
+}
