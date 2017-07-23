@@ -35,7 +35,7 @@ minetest.register_node(":asteroid:redcobble", {
 })
 
 minetest.register_node(":asteroid:gravel", {
-	description = "Asteroid gravel",
+	description = "Asteroid Gravel",
 	tiles = {"asteroid_gravel.png"},
 	is_ground_content = false,
 	groups = {crumbly = 2},
@@ -45,7 +45,7 @@ minetest.register_node(":asteroid:gravel", {
 })
 
 minetest.register_node(":asteroid:redgravel", {
-	description = "Asteroid gravel",
+	description = "Asteroid Gravel",
 	tiles = {"asteroid_redgravel.png"},
 	is_ground_content = false,
 	groups = {crumbly = 2},
