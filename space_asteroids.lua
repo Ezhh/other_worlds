@@ -17,7 +17,7 @@ if otherworlds.settings.space_asteroids.enable then
 		c_copperore = minetest.get_content_id("default:stone_with_copper"),
 		c_goldore = minetest.get_content_id("default:stone_with_gold"),
 		c_diamondore = minetest.get_content_id("default:stone_with_diamond"),
-		c_meseore = minetest.get_content_id("default:stone_with_messe"),
+		c_meseore = minetest.get_content_id("default:stone_with_mese"),
 		c_waterice = minetest.get_content_id("default:ice"),
 		c_atmos = minetest.get_content_id("asteroid:atmos"),
 		c_snowblock = minetest.get_content_id("default:snowblock"),
