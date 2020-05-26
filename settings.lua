@@ -22,5 +22,5 @@ otherworlds.settings.redsky_asteroids = {
 
 -- gravity
 otherworlds.settings.gravity = {
-	enable = false, -- set to true to enable gravity
+	enable = true, -- set to true to enable gravity
 }
