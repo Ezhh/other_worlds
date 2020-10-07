@@ -48,7 +48,7 @@ minetest.register_globalstep(function(dtime)
 
 		-- Earth
 		if pos.y < space_low and current ~= "earth" then
-			player:set_sky({}, "regular", {})
+			player:set_sky({type = "regular"})
 			player:set_clouds({density = 0.4})
 			player_list[name] = "earth"
 			if otherworlds.settings.gravity.enable then
@@ -57,7 +57,7 @@ minetest.register_globalstep(function(dtime)
 
 		-- Outerspace
 		elseif pos.y > space_low and pos.y < space_high and current ~= "space" then
-			player:set_sky({}, "skybox", spaceskybox)
+			player:set_sky({type = "skybox", textures = spaceskybox})
 			player:set_clouds({density = 0})
 			player_list[name] = "space"
 			if otherworlds.settings.gravity.enable then
@@ -66,7 +66,7 @@ minetest.register_globalstep(function(dtime)
 
 		-- Redsky
 		elseif pos.y > redsky_low and pos.y < redsky_high and current ~= "redsky" then
-			player:set_sky({}, "skybox", redskybox)
+			player:set_sky({type = "skybox", textures = redskybox})
 			player:set_clouds({density = 0})
 			player_list[name] = "redsky"
 			if otherworlds.settings.gravity.enable then
@@ -75,7 +75,7 @@ minetest.register_globalstep(function(dtime)
 
 		-- Everything else (blackness)
 		elseif pos.y > redsky_high and current ~= "blackness" then
-			player:set_sky(000000, "plain", {})
+			player:set_sky({base_color = "#000000", type = "plain"})
 			player:set_clouds({density = 0})
 			player_list[name] = "blackness"
 			if otherworlds.settings.gravity.enable then
